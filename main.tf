@@ -1,5 +1,5 @@
 provider "aws" {
-  region = "us-west-2"
+  region = var.aws_region
 }
 
 data "aws_ami" "amazon_linux_2023" {
@@ -25,9 +25,9 @@ data "aws_ami" "amazon_linux_2023" {
 
 resource "aws_instance" "app_server" {
   ami           = data.aws_ami.amazon_linux_2023.id
-  instance_type = "t3.micro"
+  instance_type = var.instance_type
 
   tags = {
-    Name = "learn-terraform"
+    Name = var.instance_name
   }
 }
