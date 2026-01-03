@@ -7,7 +7,7 @@ variable "instance_name" {
 variable "instance_type" {
   description = "The EC2 instance's type."
   type        = string
-  default     = "t3.micro"
+  default     = "t3.small"
 }
 variable "aws_region" {
   description = "The AWS region to deploy resources in."
